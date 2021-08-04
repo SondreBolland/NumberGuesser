@@ -18,8 +18,7 @@ public class Main {
 
 	public static void main(String[] args) {
 		final int lowerbound = 0;
-		final int upperbound = 100000; // 100 000
-		RandomNumber number = new RandomNumber(lowerbound, upperbound);
+		final int upperbound = 10000; // 100 000
 		
 		// Guessers
 		List<IGuesser> guessers = Arrays.asList(new RandomGuesser(), new RandomGuesserWithMemory(),
@@ -30,8 +29,9 @@ public class Main {
 			guessCounts.put(guesser, 0);
 		
 		// Run n games
-		int nGames = 1000;
+		int nGames = 10000;
 		for (int i = 0; i < nGames; i++) {
+			RandomNumber number = new RandomNumber(lowerbound, upperbound);
 			runGuessingGame(guessers, number, guessCounts);
 		}
 		
