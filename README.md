@@ -11,7 +11,7 @@ For every guess you make the count of total guesses increments.
 ## Task
 Implement a Guesser class which uses fewer guesses than the exisitng guesser classes. 
 ```java
-public class MyGeniousGuesser implements IGuesser {
+public class MyGeniusGuesser implements IGuesser {
   ...
  }
  ```
@@ -21,13 +21,11 @@ public class MyGeniousGuesser implements IGuesser {
  
  ## Expected output:
  ```
-Correct number: 63335
-
-After 1000 guessing games the guessers got the following average guessing counts:
-MyGeniousGuesser:                      ?  guesses
-RandomGuesserUsingBounds:             23  guesses
-RandomGuesserWithMemory:          48 725  guesses
-RandomGuesser:                    99 318  guesses
-SequentialGuesser:                63 336  guesses
+After 10000 guessing games the guessers got the following average guessing counts:
+MyGeniusGuesser:                       ?  guesses
+RandomGuesser:                    10 074  guesses
+RandomGuesserWithMemory:           4 951  guesses
+SequentialGuesser:                 5 014  guesses
+RandomGuesserUsingBounds:             18  guesses
 ```
 
