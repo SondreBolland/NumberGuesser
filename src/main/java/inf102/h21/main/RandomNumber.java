@@ -35,7 +35,6 @@ public class RandomNumber {
 		
 		Random rand = new Random();
 		number = rand.nextInt(upperbound-lowerbound) + lowerbound;
-		System.out.printf("Correct number: %d%n", number);
 	}
 	
 	/**

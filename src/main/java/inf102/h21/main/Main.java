@@ -14,6 +14,16 @@ import inf102.h21.guessers.SequentialGuesser;
 
 import java.text.DecimalFormat;
 
+/**
+ * Main class for running The Guessing Game.
+ * A random number is generated given an upper and lower bound. 
+ * A set of Guessers are implemented which use different strategies
+ * to guess the correct number. The Guessers are evaluated on how many
+ * guesses they have to use to find the correct number.
+ * 
+ * @author Sondre Bolland
+ *
+ */
 public class Main {
 
 	public static void main(String[] args) {
@@ -38,7 +48,7 @@ public class Main {
 		// Print results
 		System.out.printf("%nAfter %d guessing games the guessers got the following"
 				+ " average guessing counts:%n", nGames);
-		for (IGuesser guesser: guessCounts.keySet()) {
+		for (IGuesser guesser: guessers) {
 			printResult(guesser, guessCounts.get(guesser), nGames);
 		}
 	}
