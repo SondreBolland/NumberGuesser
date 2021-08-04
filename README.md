@@ -21,13 +21,11 @@ public class MyGeniusGuesser implements IGuesser {
  
  ## Expected output:
  ```
-Correct number: 63335
-
-After 1000 guessing games the guessers got the following average guessing counts:
+After 10000 guessing games the guessers got the following average guessing counts:
 MyGeniusGuesser:                       ?  guesses
-RandomGuesserUsingBounds:             23  guesses
-RandomGuesserWithMemory:          48 725  guesses
-RandomGuesser:                    99 318  guesses
-SequentialGuesser:                63 336  guesses
+RandomGuesser:                    10 074  guesses
+RandomGuesserWithMemory:           4 951  guesses
+SequentialGuesser:                 5 014  guesses
+RandomGuesserUsingBounds:             18  guesses
 ```
 
