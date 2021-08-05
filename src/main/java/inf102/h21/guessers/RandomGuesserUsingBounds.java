@@ -15,24 +15,48 @@ import inf102.h21.main.RandomNumber;
 public class RandomGuesserUsingBounds implements IGuesser {
 	
 	private Random rand = new Random();
+	private int lowerbound;
+	private int upperbound;
 
 	@Override
 	public int findNumber(RandomNumber number) {
-		int lowerbound = number.getLowerbound();
-		int upperbound = number.getUpperbound();
+		lowerbound = number.getLowerbound();
+		upperbound = number.getUpperbound();
 		
-		int numberGuess = lowerbound;
-		while (true) {
-			int queryAnswer = number.guess(numberGuess);
-			if (queryAnswer == 0)
-				return numberGuess;
-			else if (queryAnswer > 0)
-				lowerbound = numberGuess;
-			else
-				upperbound = numberGuess;
-			
-			numberGuess = rand.nextInt(upperbound-lowerbound) + lowerbound;
-		}	
+		while (lowerbound<upperbound) {
+			int nextGuess = makeGuess();
+			int queryAnswer = number.guess(nextGuess);
+			if(updateBounds(nextGuess, queryAnswer))
+				return nextGuess;			
+		}
+		
+		return lowerbound;		
 	}
 
+	private int makeGuess() {
+		return rand.nextInt(upperbound-lowerbound) + lowerbound;
+	}
+
+	/**
+	 * Updates bounds depending whether guess was lower or higher
+	 * @param numberGuess
+	 * @param queryAnswer
+	 * @return
+	 */
+	private boolean updateBounds(int numberGuess, int queryAnswer) {
+		if (queryAnswer == 0) {
+			lowerbound = numberGuess;
+			upperbound = numberGuess;
+			return true;
+		}
+		else{ 
+			if (queryAnswer > 0) {
+				lowerbound = numberGuess+1;
+			}
+			else {
+				upperbound = numberGuess-1;
+			}
+			return false;
+		}
+	}
 }

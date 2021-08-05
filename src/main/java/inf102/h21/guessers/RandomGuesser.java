@@ -12,17 +12,24 @@ import inf102.h21.main.RandomNumber;
 public class RandomGuesser implements IGuesser {
 
 	private Random rand = new Random();
+	private int lowerbound;
+	private int upperbound;
 	
 	@Override
 	public int findNumber(RandomNumber number) {
-		int lowerbound = number.getLowerbound();
-		int upperbound = number.getUpperbound();
+		lowerbound = number.getLowerbound();
+		upperbound = number.getUpperbound();
 		
-		int numberGuess = lowerbound;
-		while (number.guess(numberGuess) != 0) {
-			numberGuess = rand.nextInt(upperbound-lowerbound) + lowerbound;
-		}	
+		int numberGuess;
+		do {
+			numberGuess = makeGuess();
+		} while (number.guess(numberGuess) != 0);
+
 		return numberGuess;
+	}
+
+	private int makeGuess() {
+		return rand.nextInt(upperbound-lowerbound) + lowerbound;
 	}
 
 }
