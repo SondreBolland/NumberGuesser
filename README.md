@@ -6,6 +6,7 @@ The method ``RandomNumber::guess`` is a query method which you use to guess a nu
  * 0 if the guess is correct
  * -1 if the guess was too low
  * 1 if the guess was too high
+
 For every guess you make the count of total guesses increments. 
 
 ## Task
