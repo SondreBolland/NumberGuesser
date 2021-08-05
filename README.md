@@ -10,7 +10,7 @@ The method ``RandomNumber::guess`` is a query method which you use to guess a nu
 For every guess you make the count of total guesses increments. 
 
 ## Task
-Implement a Guesser class which uses fewer guesses than the exisitng guesser classes. 
+Implement a Guesser class which uses fewer guesses than the existing guesser classes. 
 ```java
 public class MyGeniusGuesser implements IGuesser {
   ...
