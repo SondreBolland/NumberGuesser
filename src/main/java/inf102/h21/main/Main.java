@@ -51,8 +51,8 @@ public class Main {
 		// Print results
 		System.out.printf("Number range: %s - %s%n",
 				formatter.format(lowerbound), formatter.format(upperbound));
-		System.out.printf("After %d guessing games the guessers got the following"
-				+ " average guessing counts:%n", nGames);
+		System.out.printf("After %s guessing games the guessers got the following"
+				+ " average guessing counts:%n", formatter.format(nGames));
 		System.out.println("---------------------------------------------------------------------------------");
 		for (IGuesser guesser: guessers) {
 			printResult(guesser, guessCounts.get(guesser), nGames);
