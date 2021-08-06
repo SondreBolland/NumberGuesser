@@ -20,13 +20,14 @@ public class MyGeniusGuesser implements IGuesser {
  
  Remember to add your guesser to the list of guessers in ``Main::main``.
  
+ The existing guessers are ``RandomGuesser`` and ``SequentialGuesser``. **Can you do better than them?**
+ 
  ## Expected output:
  ```
-After 10000 guessing games the guessers got the following average guessing counts:
-MyGeniusGuesser:                       ?  guesses
-RandomGuesser:                    10 074  guesses
-RandomGuesserWithMemory:           4 951  guesses
-SequentialGuesser:                 5 014  guesses
-RandomGuesserUsingBounds:             18  guesses
+Number range: 0  - 10 000 
+After 1000 guessing games the guessers got the following average guessing counts:
+---------------------------------------------------------------------------------
+RandomGuesser:                    10 341  guesses
+SequentialGuesser:                 5 115  guesses
 ```
 
