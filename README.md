@@ -25,7 +25,7 @@ public class MyGeniusGuesser implements IGuesser {
  ## Expected output:
  ```
 Number range: 0  - 10 000 
-After 1000 guessing games the guessers got the following average guessing counts:
+After 1 000 guessing games the guessers got the following average guessing counts:
 ---------------------------------------------------------------------------------
 RandomGuesser:                    10 341  guesses
 SequentialGuesser:                 5 115  guesses
