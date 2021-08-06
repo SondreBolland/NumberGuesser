@@ -14,8 +14,8 @@ Implement a Guesser class which uses fewer guesses than the existing guesser cla
 ```java
 public class MyGeniusGuesser implements IGuesser {
   ...
- }
- ```
+}
+```
  The interface ``IGuesser`` contains one method ``findNumber`` which must return the correct number (throws an exception if wrong number).
  
  Remember to add your guesser to the list of guessers in ``Main::main``.
