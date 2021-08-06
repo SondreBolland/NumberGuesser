@@ -29,5 +29,6 @@ After 1000 guessing games the guessers got the following average guessing counts
 ---------------------------------------------------------------------------------
 RandomGuesser:                    10 341  guesses
 SequentialGuesser:                 5 115  guesses
+MyGeniusGuesser:                      ??  guesses
 ```
 
