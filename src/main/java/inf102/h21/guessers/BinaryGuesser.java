@@ -1,5 +1,7 @@
 package inf102.h21.guessers;
 
+import java.util.Random;
+
 import inf102.h21.main.RandomNumber;
 
 /**
@@ -10,27 +12,49 @@ import inf102.h21.main.RandomNumber;
  */
 public class BinaryGuesser implements IGuesser {
 
+	private int lowerbound;
+	private int upperbound;
+
 	@Override
 	public int findNumber(RandomNumber number) {
-		int lowerbound = number.getLowerbound();
-		int upperbound = number.getUpperbound();
-		int foundNumber = binarySearch(number, lowerbound, upperbound);
-		return foundNumber;
-	}
-	
-	public int binarySearch(RandomNumber number, int left, int right) {
-		if (left > right)
-			throw new IllegalArgumentException("The lowerbound cannot be lower than the upperbound.");
+		lowerbound = number.getLowerbound();
+		upperbound = number.getUpperbound();
 		
-		int mid = (left + right) / 2;
-		int comparison = number.guess(mid);
-		if (comparison == 0)
-			return mid;
-		else if (comparison < 0)
-			return binarySearch(number, left, mid-1);
-		else
-			return binarySearch(number, mid+1, right);
+		while (lowerbound<upperbound) {
+			int nextGuess = makeGuess();
+			int queryAnswer = number.guess(nextGuess);
+			if(updateBounds(nextGuess, queryAnswer))
+				return nextGuess;			
+		}
+		
+		return lowerbound;		
 	}
-	
+
+	private int makeGuess() {
+		return (upperbound+lowerbound) / 2;
+	}
+
+	/**
+	 * Updates bounds depending whether guess was lower or higher
+	 * @param numberGuess
+	 * @param queryAnswer
+	 * @return
+	 */
+	private boolean updateBounds(int numberGuess, int queryAnswer) {
+		if (queryAnswer == 0) {
+			lowerbound = numberGuess;
+			upperbound = numberGuess;
+			return true;
+		}
+		else{ 
+			if (queryAnswer > 0) {
+				lowerbound = numberGuess+1;
+			}
+			else {
+				upperbound = numberGuess-1;
+			}
+			return false;
+		}
+	}
 
 }

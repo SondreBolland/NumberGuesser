@@ -28,7 +28,7 @@ public class Main {
 
 	public static void main(String[] args) {
 		final int lowerbound = 0;
-		final int upperbound = 100000; // 100 000
+		final int upperbound = 10000; // 100 000
 		
 		// Guessers
 		List<IGuesser> guessers = Arrays.asList(new RandomGuesser(), new RandomGuesserWithMemory(),
