@@ -14,19 +14,21 @@ Implement a Guesser class which uses fewer guesses than the existing guesser cla
 ```java
 public class MyGeniusGuesser implements IGuesser {
   ...
- }
- ```
+}
+```
  The interface ``IGuesser`` contains one method ``findNumber`` which must return the correct number (throws an exception if wrong number).
  
  Remember to add your guesser to the list of guessers in ``Main::main``.
  
  ## Expected output:
  ```
-After 10000 guessing games the guessers got the following average guessing counts:
-MyGeniusGuesser:                       ?  guesses
-RandomGuesser:                    10 074  guesses
-RandomGuesserWithMemory:           4 951  guesses
-SequentialGuesser:                 5 014  guesses
-RandomGuesserUsingBounds:             18  guesses
+Number range: 0  - 10 000 
+After 1000 guessing games the guessers got the following average guessing counts:
+---------------------------------------------------------------------------------
+RandomGuesser:                    10 510  guesses
+RandomGuesserWithMemory:           4 961  guesses
+SequentialGuesser:                 5 146  guesses
+BinaryGuesser:                        11  guesses
+RandomGuesserUsingBounds:             16  guesses
 ```
 
