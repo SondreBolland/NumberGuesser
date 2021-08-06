@@ -25,9 +25,6 @@ import java.text.DecimalFormat;
  *
  */
 public class Main {
-	
-	public static DecimalFormat formatter = new DecimalFormat("#, ###");
-
 
 	public static void main(String[] args) {
 		final int lowerbound = 0;
@@ -49,11 +46,8 @@ public class Main {
 		}
 		
 		// Print results
-		System.out.printf("Number range: %s - %s%n",
-				formatter.format(lowerbound), formatter.format(upperbound));
 		System.out.printf("After %d guessing games the guessers got the following"
 				+ " average guessing counts:%n", nGames);
-		System.out.println("---------------------------------------------------------------------------------");
 		for (IGuesser guesser: guessers) {
 			printResult(guesser, guessCounts.get(guesser), nGames);
 		}
@@ -99,6 +93,7 @@ public class Main {
 	 */
 	public static void printResult(IGuesser guesser, int guessCount, int nGames) {
 		String guesserName = guesser.getClass().getSimpleName();
+		DecimalFormat formatter = new DecimalFormat("#, ###");
 		String formattedCount = formatter.format(guessCount/nGames);
 		System.out.printf("%-25s %15s guesses%n", guesserName+":", formattedCount);
 	}
