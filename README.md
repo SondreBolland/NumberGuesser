@@ -1,5 +1,5 @@
 # Number Guessing Game
-Given a randomly generated number between ``0`` and ``n`` you are to guess the number by any algorithmic means.
+Given a randomly generated number between ``0`` and ``n`` you are to guess the number by **any algorithmic means**.
 
 The ``RandomNumber`` class generates a random number given a lower and upper bound. This number is hidden within the class.
 The method ``RandomNumber::guess`` is a query method which you use to guess a number. The method returns:
