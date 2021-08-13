@@ -17,8 +17,8 @@ import java.text.DecimalFormat;
 /**
  * Main class for running The Guessing Game.
  * A random number is generated given an upper and lower bound. 
- * A set of Guessers are implemented which use different strategies
- * to guess the correct number. The Guessers are evaluated on how many
+ * A set of guessers are implemented which use different strategies
+ * to guess the correct number. The guessers are evaluated on how many
  * guesses they have to use to find the correct number.
  * 
  * @author Sondre Bolland
@@ -31,7 +31,7 @@ public class Main {
 
 	public static void main(String[] args) {
 		final int lowerbound = 0;
-		final int upperbound = 10000; // 100 000
+		final int upperbound = 100000; // 100 000
 		
 		// Guessers
 		List<IGuesser> guessers = Arrays.asList(new RandomGuesser(), new RandomGuesserWithMemory(),
@@ -53,7 +53,7 @@ public class Main {
 				formatter.format(lowerbound), formatter.format(upperbound));
 		System.out.printf("After %s guessing games the guessers got the following"
 				+ " average guessing counts:%n", formatter.format(nGames));
-		System.out.println("---------------------------------------------------------------------------------");
+		System.out.println("-----------------------------------------------------------------------------------");
 		for (IGuesser guesser: guessers) {
 			printResult(guesser, guessCounts.get(guesser), nGames);
 		}

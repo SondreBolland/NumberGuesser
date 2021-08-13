@@ -42,7 +42,7 @@ public class RandomNumber {
 	 * 
 	 * For each call on this method the count of total guesses increments.
 	 * @param guessedNumber number that you are guessing
-	 * @return 0 if <code>guessedNumber</code> number is correct
+	 * @return 0 if <code>guessedNumber</code> number is correct 
 	 * 		-1 if <code>guessedNumber</code> is lower than the correct number
 	 * 		1 if <code>guessedNumber</code> is higher than the correct number
 	 */

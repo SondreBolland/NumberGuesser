@@ -1,7 +1,5 @@
 package inf102.h21.guessers;
 
-import java.util.Random;
-
 import inf102.h21.main.RandomNumber;
 
 /**
@@ -20,7 +18,7 @@ public class BinaryGuesser implements IGuesser {
 		lowerbound = number.getLowerbound();
 		upperbound = number.getUpperbound();
 		
-		while (lowerbound<upperbound) {
+		while (lowerbound < upperbound) {
 			int nextGuess = makeGuess();
 			int queryAnswer = number.guess(nextGuess);
 			if(updateBounds(nextGuess, queryAnswer))
@@ -38,7 +36,7 @@ public class BinaryGuesser implements IGuesser {
 	 * Updates bounds depending whether guess was lower or higher
 	 * @param numberGuess
 	 * @param queryAnswer
-	 * @return
+	 * @return {@code true} if queryAnswer is 0 (the guessed number was correct), else {@code false}
 	 */
 	private boolean updateBounds(int numberGuess, int queryAnswer) {
 		if (queryAnswer == 0) {
